@@ -1,5 +1,14 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<header>
+	{{partial 'navbar'}}
+</header>
 
-{{outlet}}
+<main>
+	<div class="section index-banner">
+	{{outlet}}
+	</div>
+</main>
+
+{{!--{{partial 'footer'}}--}}
+
+{{!-- ember-cli-materialize modal container --}}
+{{md-modal-container}}
