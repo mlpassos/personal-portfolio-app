@@ -7,11 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('navbar');
-  this.route('tabs');
   this.route('home');
-  this.route('jobs');
-  this.route('job', {path:'page/:jobid'}, function() {
+  this.route('jobs', {path: 'jobs/:page'}, function() {
+    
+  });
+  this.route('job', {path:'job/:slug'}, function() {
     
   });
   this.route('page', {path:'page/:pageid'}, function() {
@@ -19,6 +19,7 @@ Router.map(function() {
   });
   this.route('contact');
   this.route('about');
+  this.route('loading');
 });
 
 export default Router;

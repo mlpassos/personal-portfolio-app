@@ -1,11 +1,11 @@
 {{#md-navbar name='Márcio Passos :)' class='indigo'}}
   <!-- A workaround to get the "active" class
     to apply to the active <li> automatically -->
-  {{#link-to 'home' tagName='li'}}
-    {{link-to 'Home' 'home'}}
+  {{#link-to 'page' tagName='li'}}
+    {{link-to 'Home' 'page' 'home'}}
   {{/link-to}}
-  {{#link-to 'jobs' tagName='li'}}
-    {{link-to 'Jobs' 'jobs'}}
+  {{#link-to 'jobs' 1 tagName='li'}}
+    {{link-to 'Jobs' 'jobs' 1}}
   {{/link-to}}
   {{#link-to 'page' tagName='li'}}
     {{link-to 'About' 'page' 'about'}}

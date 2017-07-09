@@ -1,0 +1,29 @@
+{{yield}}
+<div class="row isogrid">
+  <div class="grid-sizer"></div>
+{{#each jobs as |job|}}
+  <div class="col l3 m4 s12 isoitem">
+    {{#md-card title=job.title
+    image=job.thumbnail
+    activator=true}}
+    {{#md-card-content}}
+	    {{md-btn text='Ler mais' action="lerMais" actionArg=job.slug
+			buttonType="flat" 
+			class='indigo white-text btn-ler-mais'}}
+    {{/md-card-content}}
+    {{#md-card-reveal}}
+        {{#if job.excerpt}}
+          <small class="text-left">{{{job.excerpt}}}</small>
+        {{/if}}
+    {{/md-card-reveal}}
+{{/md-card}}
+  </div>
+{{/each}}
+</div>
+{{#if page}}
+<div class="row footer-paginate">
+  <div class="col l12 m12 s12">
+    {{jobs-pages origem=origem current=page total=jobs.meta.pages}}
+  </div>
+</div>
+{{/if}}
