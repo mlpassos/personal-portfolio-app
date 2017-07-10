@@ -22,9 +22,9 @@ export default Ember.Component.extend({
 		    });  
 		},
 		actions: {
-			lerMais(slug) {
-				console.log(slug);
-				this.get('routing').transitionTo('job', slug);
+			lerMais(job) {
+				console.log(job);
+				this.get('routing').transitionTo('job', job);
 			}
 		}
 });

@@ -1,13 +1,14 @@
 {{yield}}
 <div class="row isogrid">
   <div class="grid-sizer"></div>
+  {{log 'jobs jobs' jobs}}
 {{#each jobs as |job|}}
   <div class="col l3 m4 s12 isoitem">
     {{#md-card title=job.title
     image=job.thumbnail
     activator=true}}
     {{#md-card-content}}
-	    {{md-btn text='Ler mais' action="lerMais" actionArg=job.slug
+	    {{md-btn text='Ler mais' action="lerMais" actionArg=job
 			buttonType="flat" 
 			class='indigo white-text btn-ler-mais'}}
     {{/md-card-content}}
@@ -23,7 +24,8 @@
 {{#if page}}
 <div class="row footer-paginate">
   <div class="col l12 m12 s12">
-    {{jobs-pages origem=origem current=page total=jobs.meta.pages}}
+    pages
+    {{!--{{jobs-pages origem=origem current=page total=jobs.meta.pages}}--}}
   </div>
 </div>
 {{/if}}
