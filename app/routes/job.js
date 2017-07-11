@@ -26,16 +26,22 @@ export default Ember.Route.extend({
 		}
 	],
 	_getThumbnailURL: function(thumbnail) {
-		let _this = this;
-		return _this.get('firebaseApp').storage().refFromURL('gs://portfolio-app-f9ef9.appspot.com/' + thumbnail).getDownloadURL().then(function(url) {
-			return url;
+		var _this = this;
+		var promise =  new Ember.RSVP.Promise(function(resolve, reject) {
+			_this.get('firebaseApp').storage().refFromURL('gs://portfolio-app-f9ef9.appspot.com/' + thumbnail).getDownloadURL().then(function(url) {
+				resolve(url);
+			}, function() {
+		        reject(new Error('getJSON: `' + commentId + '` failed with status: [' + this.status + ']'));
+		    });
 		});
+		return promise;
 	},
 	model(params) {
 		let _this = this;
 		let jobs = this.get('jobs');
 		let slug = params.slug;
-		// let getThumbnailURL = this.get('_getThumbnailURL');
+		console.log('slug: ', slug);
+		var getThumbnailURL = this.get('_getThumbnailURL');
 		// console.log('get', getThumbnailURL('teste'));
 		
 		// let storageRef = window.firebase.storage().ref();
@@ -45,10 +51,15 @@ export default Ember.Route.extend({
 			return job.slug === slug;
 		}).map(function(job) {
 			console.log('jobmap', job);
-			return _this.get('firebaseApp').storage().refFromURL('gs://portfolio-app-f9ef9.appspot.com/' + job.thumbnail).getDownloadURL().then(function(url) {
+			return getThumbnailURL(job.thumbnail).then(function(url) {
 				job.thumbnail = url;
-				return job
+				return job;
 			});
+			// return job;
+			// return _this.get('firebaseApp').storage().refFromURL('gs://portfolio-app-f9ef9.appspot.com/' + job.thumbnail).getDownloadURL().then(function(url) {
+			// 	job.thumbnail = url;
+			// 	return job
+			// });
 			// console.log('get', _getThumbnailURL(jobs.thumbnail));
 			// return job;
 		}).reduce(function(a) {

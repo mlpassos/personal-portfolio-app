@@ -13,10 +13,9 @@ Router.map(function() {
     
   });
   this.route('page', {path:'page/:pageid'}, function() {
-
+    this.route('about');
+    this.route('contact');
   });
-  this.route('contact');
-  this.route('about');
   this.route('loading');
 });
 
