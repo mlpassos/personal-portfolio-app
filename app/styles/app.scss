@@ -32,3 +32,21 @@ a.alignleft, img.alignleft, .wp-caption.alignleft {
   max-width: 100%;
   height: auto;
 }
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.nav-wrapper-breadcrumb {
+	display:none;
+}
+
+@media screen and (max-width:992px) {
+	.nav-wrapper-breadcrumb {
+		display:block;
+	}
+}

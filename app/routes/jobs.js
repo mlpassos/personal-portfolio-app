@@ -36,6 +36,48 @@ export default Ember.Route.extend({
 			slug: 'e-pautas',
 			excerpt: 'Job #2 Excerpt',
 			content: 'Job Content'
+		},
+		{
+			title:'JEPS 2017',
+			thumbnail: 'jeps-2017.jpg',
+			slug: 'jeps-2017',
+			excerpt: 'Job #2 Excerpt',
+			content: 'Job Content'
+		},
+		{
+			title:'Agência Belém',
+			thumbnail: 'agencia-belem.jpg',
+			slug: 'agencia-belem',
+			excerpt: 'Job #2 Excerpt',
+			content: 'Job Content'
+		},
+		{
+			title:'Pinte o 7',
+			thumbnail: 'pinte-o-7.png',
+			slug: 'pinte-o-7',
+			excerpt: 'Job #2 Excerpt',
+			content: 'Job Content'
+		},
+		{
+			title:'Secom App',
+			thumbnail: 'secom-app.jpg',
+			slug: 'secom-app',
+			excerpt: 'Job #2 Excerpt',
+			content: 'Job Content'
+		},
+		{
+			title:'Demandou',
+			thumbnail: 'secom-demandou.png',
+			slug: 'demandou',
+			excerpt: 'Job #2 Excerpt',
+			content: 'Job Content'
+		},
+		{
+			title:'Secom PSS',
+			thumbnail: 'secom-pss.png',
+			slug: 'secom-pss',
+			excerpt: 'Job #2 Excerpt',
+			content: 'Job Content'
 		}
 	],
 	_getThumbnailURL: function(_this, thumbnail) {

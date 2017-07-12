@@ -1,2 +1,22 @@
-{{outlet}}
-contact uruu
+<div class="container">
+  <div class="row">
+    <div class="col s12 m12">
+	    <h1 class="header">Contact</h1>
+	    {{!-- <form> --}}
+		    {{md-input type=text required=true value=model.name label='Name' class="col s12"}}
+		    {{md-input type=email required=true value=model.email label='E-mail' class="col s12"}}
+		    {{md-input type=text required=true value=model.subject label='Subject' class="col s12"}}
+		    {{!-- <div class="row"> --}}
+			 {{md-textarea required=true label='Message'
+			   value=model.message class="col s12"}}
+			{{!-- </div> --}}
+			<div class="row">
+				<div class="col s12 m12">
+					{{md-btn-submit icon='mdi-content-send'
+					    iconPosition='right' action="enviarEmail" on-action="enviarEmail" actionArg=model text='Send Message'}}
+				</div>
+			</div>
+		{{!-- </form> --}}
+    </div>
+  </div>
+</div>
