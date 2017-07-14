@@ -7,5 +7,10 @@ export default DS.Model.extend({
 	slug: attr('string'),
 	excerpt: attr('string'),
 	content: attr('string'),	
-	thumbnail: attr('string')
+	thumbnail: attr('string'),
+	date_created: attr('date', {
+		defaultValue() {
+			return new Date();
+		}
+	})
 });
